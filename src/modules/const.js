@@ -3,11 +3,11 @@
  * @Author: bubao
  * @Date: 2019-09-09 16:19:15
  * @LastEditors: bubao
- * @LastEditTime: 2019-09-09 22:24:56
+ * @LastEditTime: 2019-09-09 23:35:35
  */
 const PORT = 5004
 const TMP = '/var/tmp/skeyboard'
-const CORE = require('../../croe.json')
+const CORE = require('../../config.json')
 
 module.exports = {
 	PORT,

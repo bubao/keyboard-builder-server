@@ -3,7 +3,7 @@
  * @Author: bubao
  * @Date: 2019-09-09 23:16:30
  * @LastEditors: bubao
- * @LastEditTime: 2019-09-09 23:22:16
+ * @LastEditTime: 2019-09-09 23:35:00
  */
 const { writeFile, exec } = require('./modules/promisify')
 const { CORE } = require('./modules/const')
@@ -25,7 +25,7 @@ async function premake(res, files, randomPatch, template, make) {
 		})
 	}
 	// Make.
-	await exec(`cd ${randomPatch} && ${CORE.make[make]}`).catch(reason => {
+	await exec(`cd ${randomPatch} && ${CORE.acion[make]}`).catch(reason => {
 		console.error(reason)
 		return 'Failed to make'
 	})
