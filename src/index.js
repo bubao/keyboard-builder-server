@@ -3,7 +3,7 @@
  * @Author: bubao
  * @Date: 2019-08-29 17:13:48
  * @LastEditors: bubao
- * @LastEditTime: 2019-09-09 23:13:23
+ * @LastEditTime: 2019-09-09 23:31:28
  */
 
 const Express = require('express')
@@ -23,4 +23,4 @@ app.use('/zip', zip)
 app.use('/build', build)
 
 // Start listening.
-app.listen(PORT, () => console.log('⌨Listening on port:' + PORT + '...'))
+app.listen(PORT, () => console.log('Listening on port:' + PORT + '...'))
