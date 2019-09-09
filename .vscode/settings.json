@@ -1,0 +1,7 @@
+{
+	"prettier.useTabs": true,
+	"eslint.enable": true,
+	"eslint.autoFixOnSave": true,
+	"eslint.run": "onType",
+	"files.eol": "\n"
+}
