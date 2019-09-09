@@ -1,0 +1,18 @@
+{
+	"layout": {
+		"ble60": {
+			"name": "ble60",
+			"hex": "nrf52_kbd.hex",
+			"path": "/usr/local/src/nrf52-keyboard/keyboard/template"
+		},
+		"Ω45": {
+			"name": "ble60",
+			"hex": "nrf52_kbd.hex",
+			"path": "/usr/local/src/nrf52-keyboard/keyboard/Ω45"
+		}
+	},
+	"acion": {
+		"package": "make package",
+		"default": "make default"
+	}
+}

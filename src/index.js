@@ -3,7 +3,7 @@
  * @Author: bubao
  * @Date: 2019-08-29 17:13:48
  * @LastEditors: bubao
- * @LastEditTime: 2019-09-09 17:32:25
+ * @LastEditTime: 2019-09-09 23:13:23
  */
 
 const Express = require('express')
@@ -12,8 +12,8 @@ const { PORT } = require('./modules/const')
 
 // Create the express app.
 const app = Express()
-const zip = require('./router/zip')
-const build = require('./router/build')
+const zip = require('../router/zip')
+const build = require('../router/build')
 
 // Allow cross-origin requests.
 app.all(...middleware.all())

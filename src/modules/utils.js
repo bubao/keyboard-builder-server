@@ -3,7 +3,7 @@
  * @Author: bubao
  * @Date: 2019-09-09 16:02:22
  * @LastEditors: bubao
- * @LastEditTime: 2019-09-09 17:04:19
+ * @LastEditTime: 2019-09-09 22:29:17
  */
 
 const crypto = require('crypto')
@@ -19,16 +19,19 @@ function key() {
 	return crypto.randomBytes(16).toString('hex')
 }
 
-async function clean(where) {
-	if (where.indexOf('/var/tmp/') !== 0) {
-		return
+function clean(where) {
+	if (where.indexOf('/var/tmp/') === 0) {
+		return exec(`rm -rf ${where}`)
 	}
-	await exec(`rm -rf ${where}`)
 }
 
-function sendError(res, err, status) {}
+function sendError(res, err, status) {
+	res.status(status || 500).json({ error: err })
+	clean()
+}
 
 module.exports = {
 	key,
-	clean
+	clean,
+	sendError
 }
