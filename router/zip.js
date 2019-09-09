@@ -38,14 +38,7 @@ router.post('/', async (req, res) => {
 				console.error(reason)
 				utils.sendError(res, 'Failed to read zip file.', 400)
 			})
-
-		const hex = await readFile(`${randomPatch}/_build/${zipname}`).catch(
-			reason => {
-				console.error(reason)
-				utils.sendError(res, 'Failed to read zip file.', 400)
-			}
-		)
-		res.json({ hex })
+		res.sendFile(`${randomPatch}/_build/${zipname}`)
 		// Clean up.
 		utils.clean()
 	} catch (e) {

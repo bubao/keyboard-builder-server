@@ -35,5 +35,13 @@
 			"pre-commit": "pretty-quick --staged",
 			"pre-push": "pretty-quick --staged"
 		}
-	}
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/bubao/keyboard-builder-server.git"
+	},
+	"bugs": {
+		"url": "https://github.com/bubao/keyboard-builder-server/issues"
+	},
+	"homepage": "https://github.com/bubao/keyboard-builder-server#readme"
 }
