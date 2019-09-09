@@ -3,5 +3,8 @@
 	"eslint.enable": true,
 	"eslint.autoFixOnSave": true,
 	"eslint.run": "onType",
-	"files.eol": "\n"
+	"files.eol": "\n",
+	"licenser.license": "MIT",
+	"licenser.author": "bubao",
+	"licenser.projectName": "keyboard-builder-server"
 }
