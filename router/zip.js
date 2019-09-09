@@ -7,7 +7,7 @@
  */
 const Express = require('express')
 // const middleware = require('../modules/middleware')
-const { readdir, readFile } = require('../src/modules/promisify')
+const { readdir } = require('../src/modules/promisify')
 const { TMP, CORE } = require('../src/modules/const')
 const utils = require('../src/modules/utils')
 const premake = require('../src/premake')
