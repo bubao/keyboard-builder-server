@@ -3,7 +3,7 @@
  * @Author: bubao
  * @Date: 2019-09-09 16:02:22
  * @LastEditors: bubao
- * @LastEditTime: 2019-09-09 22:29:17
+ * @LastEditTime: 2019-09-10 18:05:22
  */
 
 const crypto = require("crypto");
@@ -19,7 +19,7 @@ function key() {
 	return crypto.randomBytes(16).toString("hex");
 }
 
-function clean(where) {
+function clean(where = "/var/tmp/") {
 	if (where.indexOf("/var/tmp/") === 0) {
 		return exec(`rm -rf ${where}`);
 	}
