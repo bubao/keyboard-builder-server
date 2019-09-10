@@ -3,7 +3,7 @@
  * @Author: bubao
  * @Date: 2019-09-09 16:50:09
  * @LastEditors: bubao
- * @LastEditTime: 2019-09-10 18:35:19
+ * @LastEditTime: 2019-09-10 18:37:34
  */
 const Express = require("express");
 // const middleware = require('../modules/middleware')
@@ -25,12 +25,13 @@ router.post("/", async (req, res) => {
 	try {
 		await premake(res, files, randomPatch, template, "package");
 
-		const zipname = await readdir(randomPatch + "/_build")
+		let zipname = "";
+		await readdir(randomPatch + "/_build")
 			.then(values => {
 				values.forEach(element => {
 					if (element.indexOf(".zip")) {
 						console.log("in ", element);
-						return element;
+						zipname = element;
 					}
 				});
 			})
