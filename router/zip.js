@@ -3,7 +3,7 @@
  * @Author: bubao
  * @Date: 2019-09-09 16:50:09
  * @LastEditors: bubao
- * @LastEditTime: 2019-09-10 18:10:29
+ * @LastEditTime: 2019-09-10 18:35:19
  */
 const Express = require("express");
 // const middleware = require('../modules/middleware')
@@ -29,7 +29,7 @@ router.post("/", async (req, res) => {
 			.then(values => {
 				values.forEach(element => {
 					if (element.indexOf(".zip")) {
-						console.log(element);
+						console.log("in ", element);
 						return element;
 					}
 				});
