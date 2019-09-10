@@ -3,7 +3,7 @@
  * @Author: bubao
  * @Date: 2019-09-09 16:02:22
  * @LastEditors: bubao
- * @LastEditTime: 2019-09-10 18:10:40
+ * @LastEditTime: 2019-09-10 18:13:36
  */
 
 const crypto = require("crypto");
@@ -20,7 +20,10 @@ function key() {
 }
 
 function clean(where) {
-	if (where && where.indexOf("/var/tmp/") === 0) {
+	if (where === undefined) {
+		return;
+	}
+	if (where.indexOf("/var/tmp/") === 0) {
 		return exec(`rm -rf ${where}`);
 	}
 }
