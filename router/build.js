@@ -3,7 +3,7 @@
  * @Author: bubao
  * @Date: 2019-09-09 16:21:50
  * @LastEditors: bubao
- * @LastEditTime: 2019-09-10 18:10:10
+ * @LastEditTime: 2019-09-10 18:19:36
  */
 const Express = require("express");
 // const middleware = require('../modules/middleware')
@@ -34,7 +34,7 @@ router.post("/", async (req, res) => {
 		});
 		res.json({ hex });
 		// Clean up.
-		utils.clean();
+		utils.clean(randomPatch);
 	} catch (e) {
 		console.error(e);
 		utils.sendError(res, e, randomPatch, 500);
