@@ -3,7 +3,7 @@
  * @Author: bubao
  * @Date: 2019-09-10 12:05:52
  * @LastEditors: bubao
- * @LastEditTime: 2019-09-10 12:39:32
+ * @LastEditTime: 2019-09-10 13:00:42
  -->
 <p align="center">
   <a href="" rel="noopener">
@@ -34,7 +34,7 @@
 -   [Deployment](#deployment)
 -   [Usage](#usage)
 -   [Built Using](#built_using)
--   [TODO](../TODO.md)
+-   [TODO](./docs/TODO.md)
 -   [Contributing](../CONTRIBUTING.md)
 -   [Authors](#authors)
 -   [Acknowledgments](#acknowledgement)
