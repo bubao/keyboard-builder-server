@@ -3,7 +3,7 @@
  * @Author: bubao
  * @Date: 2019-09-09 16:50:09
  * @LastEditors: bubao
- * @LastEditTime: 2019-09-10 18:37:34
+ * @LastEditTime: 2019-09-10 18:42:10
  */
 const Express = require("express");
 // const middleware = require('../modules/middleware')
@@ -29,7 +29,7 @@ router.post("/", async (req, res) => {
 		await readdir(randomPatch + "/_build")
 			.then(values => {
 				values.forEach(element => {
-					if (element.indexOf(".zip")) {
+					if (element.indexOf(".zip") !== -1) {
 						console.log("in ", element);
 						zipname = element;
 					}
