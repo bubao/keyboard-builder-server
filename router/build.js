@@ -3,7 +3,7 @@
  * @Author: bubao
  * @Date: 2019-09-09 16:21:50
  * @LastEditors: bubao
- * @LastEditTime: 2019-09-09 23:23:39
+ * @LastEditTime: 2019-09-10 17:23:49
  */
 const Express = require("express");
 // const middleware = require('../modules/middleware')
@@ -16,8 +16,8 @@ const router = Express.Router();
 
 router.post("/", async (req, res) => {
 	// Get the files.
-	const files = req.body.files;
-	const template = CORE.layout[req.body.name];
+	const files = req.body;
+	const template = CORE.layout;
 	// Create a random key.
 	const key = utils.key();
 	const randomPatch = TMP + key;
