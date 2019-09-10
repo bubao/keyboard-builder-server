@@ -6,18 +6,18 @@
 
  * @LastEditTime: 2019-09-09 22:27:45
  */
-const util = require('util')
+const util = require("util");
 
-const exec = util.promisify(require('child_process').exec)
+const exec = util.promisify(require("child_process").exec);
 
-const fs = require('fs')
-const writeFile = util.promisify(fs.writeFile)
-const readFile = util.promisify(fs.readFile)
-const readdir = util.promisify(fs.readdir)
+const fs = require("fs");
+const writeFile = util.promisify(fs.writeFile);
+const readFile = util.promisify(fs.readFile);
+const readdir = util.promisify(fs.readdir);
 
 module.exports = {
 	exec,
 	writeFile,
 	readFile,
 	readdir
-}
+};

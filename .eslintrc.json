@@ -18,7 +18,7 @@
 	"rules": {
 		"prettier/prettier": "error",
 		"semi": [0, "always"],
-		"quotes": [2, "single"],
+		"quotes": [2, "double"],
 		"no-multiple-empty-lines": "error",
 		"no-console": "off",
 		"no-var": "error",

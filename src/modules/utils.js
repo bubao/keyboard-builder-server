@@ -6,8 +6,8 @@
  * @LastEditTime: 2019-09-09 22:29:17
  */
 
-const crypto = require('crypto')
-const { exec } = require('./promisify')
+const crypto = require("crypto");
+const { exec } = require("./promisify");
 
 /**
  * 随机字符
@@ -16,22 +16,22 @@ const { exec } = require('./promisify')
  * @returns
  */
 function key() {
-	return crypto.randomBytes(16).toString('hex')
+	return crypto.randomBytes(16).toString("hex");
 }
 
 function clean(where) {
-	if (where.indexOf('/var/tmp/') === 0) {
-		return exec(`rm -rf ${where}`)
+	if (where.indexOf("/var/tmp/") === 0) {
+		return exec(`rm -rf ${where}`);
 	}
 }
 
 function sendError(res, err, status) {
-	res.status(status || 500).json({ error: err })
-	clean()
+	res.status(status || 500).json({ error: err });
+	clean();
 }
 
 module.exports = {
 	key,
 	clean,
 	sendError
-}
+};
