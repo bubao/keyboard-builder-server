@@ -3,7 +3,7 @@
  * @Author: bubao
  * @Date: 2019-09-09 16:02:22
  * @LastEditors: bubao
- * @LastEditTime: 2019-09-10 18:07:18
+ * @LastEditTime: 2019-09-10 18:10:40
  */
 
 const crypto = require("crypto");
@@ -19,15 +19,15 @@ function key() {
 	return crypto.randomBytes(16).toString("hex");
 }
 
-function clean(where = "/var/tmp/1") {
-	if (where.indexOf("/var/tmp/") === 0) {
+function clean(where) {
+	if (where && where.indexOf("/var/tmp/") === 0) {
 		return exec(`rm -rf ${where}`);
 	}
 }
 
-function sendError(res, err, status) {
+function sendError(res, err, randomPatch, status) {
 	res.status(status || 500).json({ error: err });
-	clean();
+	clean(randomPatch);
 }
 
 module.exports = {

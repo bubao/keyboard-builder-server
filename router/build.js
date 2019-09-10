@@ -3,7 +3,7 @@
  * @Author: bubao
  * @Date: 2019-09-09 16:21:50
  * @LastEditors: bubao
- * @LastEditTime: 2019-09-10 17:23:49
+ * @LastEditTime: 2019-09-10 18:10:10
  */
 const Express = require("express");
 // const middleware = require('../modules/middleware')
@@ -30,14 +30,14 @@ router.post("/", async (req, res) => {
 			`${randomPatch}/_build/${template.hex}`
 		).catch(reason => {
 			console.error(reason);
-			utils.sendError(res, "Failed to read zip file.", 400);
+			utils.sendError(res, "Failed to read zip file.", randomPatch, 400);
 		});
 		res.json({ hex });
 		// Clean up.
 		utils.clean();
 	} catch (e) {
 		console.error(e);
-		utils.sendError(res, e, 500);
+		utils.sendError(res, e, randomPatch, 500);
 	}
 });
 

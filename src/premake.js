@@ -3,7 +3,7 @@
  * @Author: bubao
  * @Date: 2019-09-09 23:16:30
  * @LastEditors: bubao
- * @LastEditTime: 2019-09-10 17:20:28
+ * @LastEditTime: 2019-09-10 18:11:00
  */
 const { writeFile, exec } = require("./modules/promisify");
 const { CORE } = require("./modules/const");
@@ -13,7 +13,7 @@ async function premake(res, files, randomPatch, template, make) {
 	// Copy the base stencil.
 	await exec(`cp -rp ${template.path} ${randomPatch}`).catch(reason => {
 		console.log(reason);
-		utils.sendError(res, "Failed to initialize.", 400);
+		utils.sendError(res, "Failed to initialize.", randomPatch, 400);
 	});
 
 	// Copy all the files.
@@ -21,7 +21,7 @@ async function premake(res, files, randomPatch, template, make) {
 		const fileName = file.replace("tmk_firmware", randomPatch);
 		writeFile(fileName, files[file]).catch(reason => {
 			console.log(reason);
-			utils.sendError(res, "Failed to initialize.", 400);
+			utils.sendError(res, "Failed to initialize.", randomPatch, 400);
 		});
 	}
 	// Make.
