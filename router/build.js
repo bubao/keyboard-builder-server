@@ -26,15 +26,16 @@ router.post("/", async (req, res) => {
 	try {
 		await premake(res, files, randomPatch, template, "default");
 
-		const hex = await readFile(
-			`${randomPatch}/_build/${template.hex}`
-		).catch(reason => {
-			console.error(reason);
-			utils.sendError(res, "Failed to read zip file.", randomPatch, 400);
-		});
-		res.json({ hex });
-		// Clean up.
-		utils.clean(randomPatch);
+		// const hex = await readFile(
+		// 	`${randomPatch}/_build/${template.hex}`
+		// ).catch(reason => {
+		// 	console.error(reason);
+		// 	utils.sendError(res, "Failed to read zip file.", randomPatch, 400);
+		// });
+		res.sendFile(`${randomPatch}/_build/${template.hex}`,()=>{
+			// Clean up.
+			utils.clean(randomPatch);
+		})
 	} catch (e) {
 		console.error(e);
 		utils.sendError(res, e, randomPatch, 500);
