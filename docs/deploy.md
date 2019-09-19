@@ -43,7 +43,7 @@ cd keyboard-builder-server
 # 安装依赖
 npm install
 # 启动服务
-pm2 start index.js -n builder-server
+pm2 start -n builder npm -- run start
 # 查看服务是否正常运行
 pm2 status
 # 确保pm2 正常运行，才能运行下面的命令启动“开机启动服务”
