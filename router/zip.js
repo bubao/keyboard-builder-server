@@ -3,7 +3,7 @@
  * @Author: bubao
  * @Date: 2019-09-09 16:50:09
  * @LastEditors: bubao
- * @LastEditTime: 2019-09-10 18:42:10
+ * @LastEditTime: 2019-09-11 21:44:28
  */
 const Express = require("express");
 // const middleware = require('../modules/middleware')
@@ -44,9 +44,10 @@ router.post("/", async (req, res) => {
 					400
 				);
 			});
-		res.sendFile(`${randomPatch}/_build/${zipname}`);
-		// Clean up.
-		utils.clean(randomPatch);
+		res.sendFile(`${randomPatch}/_build/${zipname}`, () => {
+			// Clean up.
+			utils.clean(randomPatch);
+		});
 	} catch (e) {
 		console.error(e);
 		utils.sendError(res, e, randomPatch, 500);

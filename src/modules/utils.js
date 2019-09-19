@@ -3,7 +3,7 @@
  * @Author: bubao
  * @Date: 2019-09-09 16:02:22
  * @LastEditors: bubao
- * @LastEditTime: 2019-09-10 18:44:57
+ * @LastEditTime: 2019-09-11 09:56:37
  */
 
 const crypto = require("crypto");
@@ -19,12 +19,28 @@ function key() {
 	return crypto.randomBytes(16).toString("hex");
 }
 
+/**
+ * 清除tmp
+ * @author 邓展
+ * @date 2019-09-11
+ * @param {string} where /var/tmp/*
+ * @returns
+ */
 function clean(where) {
-	if (where !== undefined && where !== "/") {
+	if (where !== undefined && where.indexOf("/var/tmp/") === 0) {
 		return exec(`rm -rf ${where}`);
 	}
 }
 
+/**
+ * 返回错误信息，并清除tmp
+ * @author 邓展
+ * @date 2019-09-11
+ * @param {*} res
+ * @param {*} err
+ * @param {*} randomPatch
+ * @param {*} status
+ */
 function sendError(res, err, randomPatch, status) {
 	res.status(status || 500).json({ error: err });
 	clean(randomPatch);
