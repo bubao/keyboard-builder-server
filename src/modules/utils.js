@@ -3,7 +3,7 @@
  * @Author: bubao
  * @Date: 2019-09-09 16:02:22
  * @LastEditors: bubao
- * @LastEditTime: 2019-09-11 09:56:37
+ * @LastEditTime: 2019-09-19 11:10:13
  */
 
 const crypto = require("crypto");
@@ -21,7 +21,7 @@ function key() {
 
 /**
  * 清除tmp
- * @author 邓展
+ * @author bubao
  * @date 2019-09-11
  * @param {string} where /var/tmp/*
  * @returns
@@ -34,7 +34,7 @@ function clean(where) {
 
 /**
  * 返回错误信息，并清除tmp
- * @author 邓展
+ * @author bubao
  * @date 2019-09-11
  * @param {*} res
  * @param {*} err
