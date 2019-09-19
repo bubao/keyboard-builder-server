@@ -6,5 +6,6 @@
 	"files.eol": "\n",
 	"licenser.license": "MIT",
 	"licenser.author": "bubao",
-	"licenser.projectName": "keyboard-builder-server"
+	"licenser.projectName": "keyboard-builder-server",
+	"eggHelper.serverPort": 61560
 }
