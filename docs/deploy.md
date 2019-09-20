@@ -3,7 +3,7 @@
  * @Author: bubao
  * @Date: 2019-09-19 10:36:41
  * @LastEditors: bubao
- * @LastEditTime: 2019-09-19 14:08:09
+ * @LastEditTime: 2019-09-20 12:09:40
  -->
 
 # 部署
@@ -259,6 +259,20 @@ server {
 cd /usr/local/src
 git clone https://github.com/bubao/qmkbuilder.git
 cd qmkbuilder
+vim src/const/local.json
+```
+
+```json
+// src/const/local.json
+{
+	"API": "http://47.94.203.187:5004/build",
+	"TEST": "http://47.94.203.187:5004/test",
+	"ZIP": "http://47.94.203.187:5004/zip",
+	"PRESETS": "/presets/"
+}
+```
+
+```bash
 npm install
 npm run deploy
 ```
