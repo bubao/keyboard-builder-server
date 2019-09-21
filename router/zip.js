@@ -44,10 +44,8 @@ router.post("/", async (req, res) => {
 					400
 				);
 			});
-		res.sendFile(`${randomPatch}/_build/${zipname}`, () => {
-			// Clean up.
-			utils.clean(randomPatch);
-		});
+		res.sendFile(`${randomPatch}/_build/${zipname}`);
+		utils.clean(randomPatch);
 	} catch (e) {
 		console.error(e);
 		utils.sendError(res, e, randomPatch, 500);
