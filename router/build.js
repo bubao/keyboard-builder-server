@@ -23,10 +23,8 @@ router.post("/", async (req, res) => {
 	// Start.
 	try {
 		await premake(res, files, randomPatch, template, "default");
-		res.sendFile(`${randomPatch}/_build/${template.hex}`, () => {
-			// Clean up.
-			utils.clean(randomPatch);
-		});
+		res.sendFile(`${randomPatch}/_build/${template.hex}`);
+		utils.clean(randomPatch);
 	} catch (e) {
 		console.error(e);
 		utils.sendError(res, e, randomPatch, 500);
