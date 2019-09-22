@@ -10,12 +10,13 @@ const { CORE } = require("./modules/const");
 const utils = require("./modules/utils");
 
 async function premake(res, files, randomPatch, template, make) {
+	console.log("premake");
 	// Copy the base stencil.
 	await exec(`cp -rp ${template.path} ${randomPatch}`).catch(reason => {
 		console.log(reason);
 		utils.sendError(res, "Failed to initialize.", randomPatch, 400);
 	});
-
+	console.log("premake:" + `cp -rp ${template.path} ${randomPatch}`);
 	// Copy all the files.
 	for (const file in files) {
 		const fileName = file.replace("tmk_firmware", randomPatch);
@@ -24,6 +25,7 @@ async function premake(res, files, randomPatch, template, make) {
 			utils.sendError(res, "Failed to initialize.", randomPatch, 400);
 		});
 	}
+	console.log("premake:" + `cd ${randomPatch} && ${CORE.acion[make]}`);
 	// Make.
 	await exec(`cd ${randomPatch} && ${CORE.acion[make]}`).catch(reason => {
 		console.error(reason);
