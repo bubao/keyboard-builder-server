@@ -25,9 +25,9 @@ async function premake(res, files, randomPatch, template, make) {
 			utils.sendError(res, "Failed to initialize.", randomPatch, 400);
 		});
 	}
-	console.log("premake:" + `cd ${randomPatch} && ${CORE.acion[make]}`);
+	console.log("premake:" + `cd ${randomPatch} && ${CORE.action[make]}`);
 	// Make.
-	await exec(`cd ${randomPatch} && ${CORE.acion[make]}`).catch(reason => {
+	await exec(`cd ${randomPatch} && ${CORE.action[make]}`).catch(reason => {
 		console.error(reason);
 		return "Failed to make";
 	});
