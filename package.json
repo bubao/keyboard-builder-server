@@ -3,8 +3,9 @@
 	"version": "0.0.1",
 	"description": "keyboard builder server",
 	"main": "src/index.js",
-	"scripts": {
-		"start": "node src/index.js"
+	"private": true,
+	"egg": {
+		"declarations": true
 	},
 	"keywords": [
 		"tmk",
@@ -14,11 +15,20 @@
 	"author": "bubao",
 	"license": "MIT",
 	"dependencies": {
-		"body-parser": "^1.19.0",
-		"express": "^4.17.1"
+		"egg": "^2.15.1",
+		"egg-scripts": "^2.11.0",
+		"egg-validate": "^2.0.2"
 	},
 	"devDependencies": {
+		"@commitlint/cli": "^8.2.0",
+		"@commitlint/config-conventional": "^8.2.0",
+		"autod": "^3.0.1",
+		"autod-egg": "^1.1.0",
+		"egg-bin": "^4.11.0",
+		"egg-ci": "^1.11.0",
+		"egg-mock": "^3.21.0",
 		"eslint": "^6.8.0",
+		"eslint-config-egg": "^7.1.0",
 		"eslint-config-prettier": "^6.10.0",
 		"eslint-config-standard": "^14.1.0",
 		"eslint-plugin-import": "^2.20.1",
@@ -26,15 +36,46 @@
 		"eslint-plugin-prettier": "^3.1.2",
 		"eslint-plugin-promise": "^4.2.1",
 		"eslint-plugin-standard": "^4.0.1",
+		"lint-staged": "^8.1.5",
 		"husky": "^3.1.0",
 		"prettier": "^1.19.1",
 		"pretty-quick": "^1.11.1"
 	},
+	"engines": {
+		"node": ">=10.0.0"
+	},
+	"scripts": {
+		"start-old": "node src/index.js",
+		"start": "egg-scripts start --daemon --title=egg-server-keyboard-builder-server",
+		"stop": "egg-scripts stop --title=egg-server-keyboard-builder-server",
+		"dev": "egg-bin dev",
+		"debug": "egg-bin debug",
+		"test": "npm run lint -- --fix && npm run test-local",
+		"test-local": "egg-bin test",
+		"cov": "egg-bin cov",
+		"lint": "eslint .",
+		"ci": "npm run lint && npm run cov",
+		"autod": "autod",
+		"pre-commit": "pretty-quick --staged",
+		"cz": "npx git-cz"
+	},
 	"husky": {
 		"hooks": {
 			"pre-commit": "pretty-quick --staged",
-			"pre-push": "pretty-quick --staged"
+			"pre-push": "pretty-quick --staged",
+			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
 		}
+	},
+	"config": {
+		"commitizen": {
+			"path": "node_modules/cz-customizable"
+		},
+		"cz-customizable": {
+			"config": "config/cz-config.js"
+		}
+	},
+	"ci": {
+		"version": "10"
 	},
 	"repository": {
 		"type": "git",
@@ -43,5 +84,9 @@
 	"bugs": {
 		"url": "https://github.com/bubao/keyboard-builder-server/issues"
 	},
-	"homepage": "https://github.com/bubao/keyboard-builder-server#readme"
+	"homepage": "https://github.com/bubao/keyboard-builder-server#readme",
+	"directories": {
+		"doc": "docs",
+		"test": "test"
+	}
 }

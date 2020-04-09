@@ -10,6 +10,7 @@
 	},
 	"extends": [
 		"standard",
+		"eslint-config-egg",
 		"prettier",
 		"plugin:node/recommended",
 		"eslint:recommended"

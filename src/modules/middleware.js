@@ -3,8 +3,9 @@
  * @Author: bubao
  * @Date: 2019-09-09 15:57:45
  * @LastEditors: bubao
- * @LastEditTime: 2019-09-19 11:08:36
+ * @LastEditTime: 2020-04-09 15:23:01
  */
+"use strict";
 
 const BodyParser = require("body-parser");
 
@@ -12,7 +13,7 @@ const BodyParser = require("body-parser");
  * 允许所有跨域
  * @author bubao
  * @date 2019-09-11
- * @returns 跨域数组，用于解析到中间件中的参数
+ * @return 跨域数组，用于解析到中间件中的参数
  */
 function all() {
 	return [
@@ -37,7 +38,7 @@ function all() {
  * BodyParser
  * @author bubao
  * @date 2019-09-11
- * @returns 解析到中间件中的参数
+ * @return 解析到中间件中的参数
  */
 function bodyParser() {
 	return [BodyParser.json(), BodyParser.urlencoded({ extended: true })];

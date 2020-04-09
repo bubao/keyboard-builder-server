@@ -3,9 +3,9 @@
  * @Author: bubao
  * @Date: 2019-08-29 17:13:48
  * @LastEditors: bubao
- * @LastEditTime: 2019-09-09 23:31:28
+ * @LastEditTime: 2020-04-09 15:28:01
  */
-
+"use strict";
 const Express = require("express");
 const middleware = require("./modules/middleware");
 const { PORT } = require("./modules/const");

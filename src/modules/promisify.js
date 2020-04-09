@@ -6,6 +6,7 @@
 
  * @LastEditTime: 2019-09-09 22:27:45
  */
+"use strict";
 const util = require("util");
 
 const exec = util.promisify(require("child_process").exec);
