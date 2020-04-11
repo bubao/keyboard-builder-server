@@ -3,7 +3,7 @@
  * @Author: bubao
  * @Date: 2020-04-09 15:51:58
  * @LastEditors: bubao
- * @LastEditTime: 2020-04-09 17:51:00
+ * @LastEditTime: 2020-04-11 14:15:44
  */
 "use strict";
 
@@ -33,7 +33,7 @@ module.exports = class HomeService extends Service {
 		// Get the files.
 		const helper = ctx.helper;
 		const files = ctx.request.body;
-		ctx.validate({ files: "object" }, files);
+		// ctx.validate({ files: "object" }, files);
 		const template = ctx.helper.CORE.layout;
 		// Create a random key.
 		const key = helper.key();
@@ -63,6 +63,16 @@ module.exports = class HomeService extends Service {
 		);
 	}
 
+	/**
+	 *
+	 * make 前置任务
+	 * @author bubao
+	 * @date 2020-04-11
+	 * @param {object} files
+	 * @param {String} randomPatch
+	 * @param {String} template
+	 * @param {String} make
+	 */
 	async premake(files, randomPatch, template, make) {
 		const { ctx } = this;
 		const helper = ctx.helper;

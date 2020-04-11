@@ -45,9 +45,7 @@
 		"node": ">=10.0.0"
 	},
 	"scripts": {
-		"start-old": "node src/index.js",
-		"start": "egg-scripts start --daemon --title=egg-server-keyboard-builder-server",
-		"stop": "egg-scripts stop --title=egg-server-keyboard-builder-server",
+		"start": "pm2 run npm --name=keyboard-builder-server -- run start",
 		"dev": "egg-bin dev",
 		"debug": "egg-bin debug",
 		"test": "npm run lint -- --fix && npm run test-local",
