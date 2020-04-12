@@ -22,8 +22,8 @@ router.post("/", async (req, res) => {
 
 	// Start.
 	try {
-		await premake(res, files, randomPatch, template, "default");
-		res.sendFile(`${randomPatch}/_build/${template.kbdhex}`, () => {
+		await premake(res, files, randomPatch, template, "ch554");
+		res.sendFile(`${randomPatch}/_build/${template.ch554hex}`, () => {
 			utils.clean(randomPatch);
 		});
 	} catch (e) {
