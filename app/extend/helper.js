@@ -3,7 +3,7 @@
  * @Author: bubao
  * @Date: 2020-04-09 15:43:29
  * @LastEditors: bubao
- * @LastEditTime: 2020-04-13 02:23:47
+ * @LastEditTime: 2020-04-13 02:26:44
  */
 "use strict";
 const crypto = require("crypto");
@@ -64,9 +64,9 @@ module.exports = {
 			path: "/home/geno/SOURCE/nRF52-Keyboard/keyboard/builder"
 		},
 		action: {
-			package: "make package",
-			default: "make default",
-			ch554: "make ch554"
+			package: "make -j12 package",
+			default: "make -j12 default",
+			ch554: "make -j12 ch554"
 		}
 	},
 	stat,
