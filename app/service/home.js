@@ -106,7 +106,7 @@ module.exports = class HomeService extends Service {
 		console.log(`premake: cp -rp ${template.path} ${randomPatch}`);
 		// Copy all the files.
 		for (const file in files) {
-			const fileName = file.replace("tmk_firmware", randomPatch);
+			const fileName = file.replace("lotkb", randomPatch);
 			await helper.writeFile(fileName, files[file]).catch(reason => {
 				console.log(reason);
 				helper.sendError("Failed to initialize.", randomPatch, 400);
