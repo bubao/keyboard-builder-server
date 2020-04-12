@@ -24,6 +24,7 @@
 		"@commitlint/config-conventional": "^8.2.0",
 		"autod": "^3.0.1",
 		"autod-egg": "^1.1.0",
+		"cz-customizable": "^6.2.0",
 		"egg-bin": "^4.11.0",
 		"egg-ci": "^1.11.0",
 		"egg-mock": "^3.21.0",
@@ -36,8 +37,8 @@
 		"eslint-plugin-prettier": "^3.1.2",
 		"eslint-plugin-promise": "^4.2.1",
 		"eslint-plugin-standard": "^4.0.1",
-		"lint-staged": "^8.1.5",
 		"husky": "^3.1.0",
+		"lint-staged": "^8.1.5",
 		"prettier": "^1.19.1",
 		"pretty-quick": "^1.11.1"
 	},
