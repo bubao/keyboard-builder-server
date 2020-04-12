@@ -3,7 +3,7 @@
  * @Author: bubao
  * @Date: 2020-04-09 14:47:36
  * @LastEditors: bubao
- * @LastEditTime: 2020-04-12 15:58:28
+ * @LastEditTime: 2020-04-12 16:10:03
  */
 /* eslint valid-jsdoc: "off" */
 
@@ -36,6 +36,18 @@ module.exports = appInfo => {
 			port: 5004
 		}
 	};
+	config.security = {
+		csrf: {
+			// 判断是否需要 ignore 的方法，请求上下文 context 作为第一个参数
+			// ignore: ['/', '/api', '/sms', '/user', '/register', '/ai', '/wx'],
+			useSession: true,
+			// enable: appInfo.env === 'production',
+			enable: false,
+			cookieName: "csrfToken", // Cookie 中的字段名，默认为 csrfToken
+			sessionName: "csrfToken" // Session 中的字段名，默认为 csrfToken
+		}
+	};
+
 	config.cors = {
 		exposeHeaders: "WWW-Authenticate,Server-Authorization,Date",
 		maxAge: 100,
