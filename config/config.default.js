@@ -3,7 +3,7 @@
  * @Author: bubao
  * @Date: 2020-04-09 14:47:36
  * @LastEditors: bubao
- * @LastEditTime: 2020-04-12 14:20:38
+ * @LastEditTime: 2020-04-12 15:58:28
  */
 /* eslint valid-jsdoc: "off" */
 
@@ -35,6 +35,14 @@ module.exports = appInfo => {
 			// path: '',
 			port: 5004
 		}
+	};
+	config.cors = {
+		exposeHeaders: "WWW-Authenticate,Server-Authorization,Date",
+		maxAge: 100,
+		credentials: true,
+		allowMethods: "GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS",
+		allowHeaders:
+			"Content-Type,Authorization,Accept,X-Custom-Header,anonymous"
 	};
 
 	return {
