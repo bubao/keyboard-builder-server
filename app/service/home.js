@@ -3,7 +3,7 @@
  * @Author: bubao
  * @Date: 2020-04-09 15:51:58
  * @LastEditors: bubao
- * @LastEditTime: 2020-04-12 13:41:13
+ * @LastEditTime: 2020-04-12 14:13:07
  */
 "use strict";
 
@@ -22,8 +22,8 @@ module.exports = class HomeService extends Service {
 		const randomPatch = ctx.helper.TMP + key;
 		await this.premake(files, randomPatch, template, "default");
 		await this.sendFile(
-			template.hex,
-			`${randomPatch}/_build/${template.hex}`,
+			template.kbdhex,
+			`${randomPatch}/_build/${template.kbdhex}`,
 			randomPatch
 		);
 	}
@@ -59,6 +59,25 @@ module.exports = class HomeService extends Service {
 		await this.sendFile(
 			zipname,
 			`${randomPatch}/_build/${zipname}`,
+			randomPatch
+		);
+	}
+
+	async ch554() {
+		const { ctx } = this;
+		// Get the files.
+		const files = ctx.request.body;
+		// ctx.validate({ files: "object" }, files);
+		const template = ctx.helper.CORE.layout;
+		// Create a random key.
+		const key = ctx.helper.key();
+		const randomPatch = ctx.helper.TMP + key;
+
+		// Start.
+		await this.premake(files, randomPatch, template, "ch554");
+		await this.sendFile(
+			template.ch554hex,
+			`${randomPatch}/_build/${template.ch554hex}`,
 			randomPatch
 		);
 	}
