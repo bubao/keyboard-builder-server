@@ -45,7 +45,7 @@
 		"node": ">=10.0.0"
 	},
 	"scripts": {
-		"start": "pm2 run npm --name=keyboard-builder-server -- run start",
+		"start": "pm2 start index.js -n builder-server",
 		"dev": "egg-bin dev",
 		"debug": "egg-bin debug",
 		"test": "npm run lint -- --fix && npm run test-local",

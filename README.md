@@ -3,7 +3,7 @@
  * @Author: bubao
  * @Date: 2019-09-10 12:05:52
  * @LastEditors: bubao
- * @LastEditTime: 2019-09-10 13:00:42
+ * @LastEditTime: 2020-04-12 13:21:13
  -->
 <p align="center">
   <a href="" rel="noopener">
@@ -83,6 +83,7 @@ git clone https://github.com/bubao/keyboard-builder-server.git
 cd keyboard-builder-server
 npm install
 pm2 start index.js -n builder-server
+# npm run start
 ```
 
 if you want to start the server when system is booted.
