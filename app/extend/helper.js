@@ -34,7 +34,7 @@ function key() {
  * @return PromiseWithChild
  */
 function clean(where) {
-	if (where !== undefined && where.indexOf("/var/tmp/") === 0) {
+	if (where !== undefined && where.indexOf("/home/geno/SOURCE/tmp") === 0) {
 		return exec(`rm -rf ${where}`);
 	}
 }
@@ -55,13 +55,13 @@ function sendError(error, randomPatch, status) {
 }
 
 module.exports = {
-	TMP: "/var/tmp/keyboard",
+	TMP: "/home/geno/SOURCE/tmp",
 	CORE: {
 		layout: {
 			name: "lotkb",
 			kbdhex: "nrf52_kbd.hex",
 			ch554hex: "ch554.hex",
-			path: "/home/geno/SOURCE/nRF52-Keyboard/keyboard/template"
+			path: "/home/geno/SOURCE/nRF52-Keyboard/keyboard/builder"
 		},
 		action: {
 			package: "make package",
