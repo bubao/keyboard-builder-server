@@ -3,7 +3,7 @@
  * @Author: bubao
  * @Date: 2020-04-09 14:45:37
  * @LastEditors: bubao
- * @LastEditTime: 2020-04-12 14:42:41
+ * @LastEditTime: 2020-04-12 15:36:44
  */
 "use strict";
 
@@ -20,9 +20,9 @@ class HomeController extends Controller {
 		await ctx.service.home.zip();
 	}
 
-	async ch544() {
+	async ch554() {
 		const { ctx } = this;
-		await ctx.service.home.ch544();
+		await ctx.service.home.ch554();
 	}
 }
 
