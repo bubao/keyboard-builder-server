@@ -3,7 +3,7 @@
  * @Author: bubao
  * @Date: 2020-04-09 15:43:29
  * @LastEditors: bubao
- * @LastEditTime: 2020-04-09 17:44:14
+ * @LastEditTime: 2020-04-12 14:00:18
  */
 "use strict";
 const crypto = require("crypto");
@@ -55,7 +55,7 @@ function sendError(error, randomPatch, status) {
 }
 
 module.exports = {
-	YMP: "/var/tmp/keyboard",
+	TMP: "/var/tmp/keyboard",
 	CORE: {
 		layout: {
 			name: "ble60",
