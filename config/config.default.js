@@ -3,7 +3,7 @@
  * @Author: bubao
  * @Date: 2020-04-09 14:47:36
  * @LastEditors: bubao
- * @LastEditTime: 2020-04-12 16:10:03
+ * @LastEditTime: 2020-04-12 16:35:54
  */
 /* eslint valid-jsdoc: "off" */
 
@@ -52,6 +52,7 @@ module.exports = appInfo => {
 		exposeHeaders: "WWW-Authenticate,Server-Authorization,Date",
 		maxAge: 100,
 		credentials: true,
+		origin: "*",
 		allowMethods: "GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS",
 		allowHeaders:
 			"Content-Type,Authorization,Accept,X-Custom-Header,anonymous"
