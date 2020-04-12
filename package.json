@@ -2,7 +2,7 @@
 	"name": "keyboard-builder-server",
 	"version": "0.0.1",
 	"description": "keyboard builder server",
-	"main": "src/index.js",
+	"main": "server.js",
 	"private": true,
 	"egg": {
 		"declarations": true
