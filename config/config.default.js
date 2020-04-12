@@ -3,7 +3,7 @@
  * @Author: bubao
  * @Date: 2020-04-09 14:47:36
  * @LastEditors: bubao
- * @LastEditTime: 2020-04-09 17:49:54
+ * @LastEditTime: 2020-04-12 14:20:38
  */
 /* eslint valid-jsdoc: "off" */
 
@@ -28,6 +28,13 @@ module.exports = appInfo => {
 	// add your user config here
 	const userConfig = {
 		// myAppName: 'egg',
+	};
+
+	config.cluster = {
+		listen: {
+			// path: '',
+			port: 5004
+		}
 	};
 
 	return {

@@ -3,7 +3,7 @@
  * @Author: bubao
  * @Date: 2020-04-09 15:43:29
  * @LastEditors: bubao
- * @LastEditTime: 2020-04-12 14:09:58
+ * @LastEditTime: 2020-04-12 14:17:31
  */
 "use strict";
 const crypto = require("crypto");
@@ -61,7 +61,7 @@ module.exports = {
 			name: "lotkb",
 			kbdhex: "nrf52_kbd.hex",
 			ch554hex: "ch554.hex",
-			path: "/usr/local/src/nrf52-keyboard/keyboard/template"
+			path: "/home/geno/SOURCE/nRF52-Keyboard/keyboard/template"
 		},
 		action: {
 			package: "make package",
