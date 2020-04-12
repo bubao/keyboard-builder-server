@@ -55,7 +55,7 @@ function sendError(error, randomPatch, status) {
 }
 
 module.exports = {
-	TMP: "/home/geno/SOURCE/tmp",
+	TMP: "/home/geno/SOURCE/tmp/",
 	CORE: {
 		layout: {
 			name: "lotkb",

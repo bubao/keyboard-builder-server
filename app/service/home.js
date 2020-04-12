@@ -98,12 +98,12 @@ module.exports = class HomeService extends Service {
 		console.log("premake");
 		// Copy the base stencil.
 		await helper
-			.exec(`cp -rp ${template.path} ${randomPatch}`)
+			.exec(`mkdir ${randomPatch}`)
 			.catch(reason => {
 				console.log(reason);
 				helper.sendError("Failed to initialize.", randomPatch, 400);
 			});
-		console.log(`premake: cp -rp ${template.path} ${randomPatch}`);
+		console.log(`mkdir ${randomPatch}`);
 		// Copy all the files.
 		for (const file in files) {
 			const fileName = file.replace("lotkb", randomPatch);
@@ -112,9 +112,7 @@ module.exports = class HomeService extends Service {
 				helper.sendError("Failed to initialize.", randomPatch, 400);
 			});
 		}
-		console.log(
-			`premake: cd ${randomPatch} && ${helper.CORE.action[make]}`
-		);
+		console.log(`replace lotkb files`);
 		// Make.
 		await helper
 			.exec(`cd ${randomPatch} && ${helper.CORE.action[make]}`)
@@ -122,6 +120,7 @@ module.exports = class HomeService extends Service {
 				console.error(reason);
 				return "Failed to make";
 			});
+			console.log(`premake: cd ${randomPatch} && ${helper.CORE.action[make]}`);
 	}
 
 	/**
