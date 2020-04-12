@@ -3,7 +3,7 @@
  * @Author: bubao
  * @Date: 2020-04-09 15:43:29
  * @LastEditors: bubao
- * @LastEditTime: 2020-04-12 14:17:31
+ * @LastEditTime: 2020-04-13 02:23:47
  */
 "use strict";
 const crypto = require("crypto");
@@ -66,7 +66,7 @@ module.exports = {
 		action: {
 			package: "make package",
 			default: "make default",
-			ch554: "make ch544"
+			ch554: "make ch554"
 		}
 	},
 	stat,
