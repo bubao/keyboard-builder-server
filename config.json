@@ -1,9 +1,9 @@
 {
 	"layout": {
-		"name": "ble60",
+		"name": "lotkb",
 		"kbdhex": "nrf52_kbd.hex",
-		"ch554hex": "nrf52_kbd.hex",
-		"path": "/usr/local/src/nrf52-keyboard/keyboard/template"
+		"ch554hex": "ch554.hex",
+		"path": "/home/geno/SOURCE/nRF52-Keyboard/keyboard/template"
 	},
 	"action": {
 		"package": "make -j12 package",

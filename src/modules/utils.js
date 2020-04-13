@@ -27,7 +27,7 @@ function key() {
  * @returns
  */
 function clean(where) {
-	if (where !== undefined && where.indexOf("/var/tmp/") === 0) {
+	if (where !== undefined && where.indexOf("/home/geno/SOURCE/tmp/") === 0) {
 		return exec(`rm -rf ${where}`);
 	}
 }
