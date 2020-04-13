@@ -20,12 +20,14 @@ module.exports = class HomeService extends Service {
 		// Create a random key.
 		const key = ctx.helper.key();
 		const randomPatch = ctx.helper.TMP + key;
+		console.log(`Start Compile：Build`);
 		await this.premake(files, randomPatch, template, "default");
 		await this.sendFile(
 			template.kbdhex,
 			`${randomPatch}/_build/${template.kbdhex}`,
 			randomPatch
 		);
+		console.log(`Compile finish：${template.kbdhex}`);
 	}
 
 	async zip() {
@@ -42,6 +44,7 @@ module.exports = class HomeService extends Service {
 		await this.premake(files, randomPatch, template, "package");
 
 		let zipname = "";
+		console.log(`Start Compile：ZIP`);
 		await helper
 			.readdir(randomPatch + "/_build")
 			.then(values => {
@@ -61,6 +64,7 @@ module.exports = class HomeService extends Service {
 			`${randomPatch}/_build/${zipname}`,
 			randomPatch
 		);
+		console.log(`Compile finish：${zipname}`);
 	}
 
 	async ch554() {
@@ -74,12 +78,14 @@ module.exports = class HomeService extends Service {
 		const randomPatch = ctx.helper.TMP + key;
 
 		// Start.
+		console.log(`Start Compile：CH554`);
 		await this.premake(files, randomPatch, template, "ch554");
 		await this.sendFile(
 			template.ch554hex,
 			`${randomPatch}/_build/${template.ch554hex}`,
 			randomPatch
 		);
+		console.log(`Compile finish：${template.ch554hex}`);
 	}
 
 	/**
