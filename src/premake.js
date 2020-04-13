@@ -12,14 +12,14 @@ const utils = require("./modules/utils");
 async function premake(res, files, randomPatch, template, make) {
 	console.log("premake");
 	// Copy the base stencil.
-	await exec(`cp -rp ${template.path} ${randomPatch}`).catch(reason => {
+	await exec(`mkdir ${randomPatch}`).catch(reason => {
 		console.log(reason);
 		utils.sendError(res, "Failed to initialize.", randomPatch, 400);
 	});
-	console.log("premake:" + `cp -rp ${template.path} ${randomPatch}`);
+	console.log("premake:" + `mkdir ${randomPatch}`);
 	// Copy all the files.
 	for (const file in files) {
-		const fileName = file.replace("tmk_firmware", randomPatch);
+		const fileName = file.replace("lotkb", randomPatch);
 		await writeFile(fileName, files[file]).catch(reason => {
 			console.log(reason);
 			utils.sendError(res, "Failed to initialize.", randomPatch, 400);

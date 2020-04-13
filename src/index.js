@@ -14,6 +14,7 @@ const { PORT } = require("./modules/const");
 const app = Express();
 const zip = require("../router/zip");
 const build = require("../router/build");
+const ch554 = require("../router/ch554");
 
 // Allow cross-origin requests.
 app.all(...middleware.all());
@@ -21,6 +22,7 @@ app.use(...middleware.bodyParser());
 
 app.use("/zip", zip);
 app.use("/build", build);
+app.use("/ch554", ch554);
 
 // Start listening.
 app.listen(PORT, () => console.log("Listening on port:" + PORT + "..."));

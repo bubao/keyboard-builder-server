@@ -1,11 +1,13 @@
 {
 	"layout": {
 		"name": "ble60",
-		"hex": "nrf52_kbd.hex",
+		"kbdhex": "nrf52_kbd.hex",
+		"ch554hex": "nrf52_kbd.hex",
 		"path": "/usr/local/src/nrf52-keyboard/keyboard/template"
 	},
 	"action": {
-		"package": "make package",
-		"default": "make default"
+		"package": "make -j12 package",
+		"default": "make -j12 default",
+		"ch554": "make -j12 ch554"
 	}
 }
