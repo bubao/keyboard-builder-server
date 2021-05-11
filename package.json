@@ -1,47 +1,47 @@
 {
-	"name": "keyboard-builder-server",
-	"version": "0.0.1",
-	"description": "keyboard builder server",
-	"main": "src/index.js",
-	"scripts": {
-		"start": "node src/index.js"
-	},
-	"keywords": [
-		"tmk",
-		"qmk",
-		"builder"
-	],
-	"author": "bubao",
-	"license": "MIT",
-	"dependencies": {
-		"body-parser": "^1.19.0",
-		"express": "^4.17.1"
-	},
-	"devDependencies": {
-		"eslint": "^6.8.0",
-		"eslint-config-prettier": "^6.10.0",
-		"eslint-config-standard": "^14.1.0",
-		"eslint-plugin-import": "^2.20.1",
-		"eslint-plugin-node": "^10.0.0",
-		"eslint-plugin-prettier": "^3.1.2",
-		"eslint-plugin-promise": "^4.2.1",
-		"eslint-plugin-standard": "^4.0.1",
-		"husky": "^3.1.0",
-		"prettier": "^1.19.1",
-		"pretty-quick": "^1.11.1"
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "pretty-quick --staged",
-			"pre-push": "pretty-quick --staged"
-		}
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/bubao/keyboard-builder-server.git"
-	},
-	"bugs": {
-		"url": "https://github.com/bubao/keyboard-builder-server/issues"
-	},
-	"homepage": "https://github.com/bubao/keyboard-builder-server#readme"
+  "name": "keyboard-builder-server",
+  "version": "0.0.1",
+  "description": "keyboard builder server",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "keywords": [
+    "tmk",
+    "qmk",
+    "builder"
+  ],
+  "author": "bubao",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.26.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-promise": "^4.3.1",
+    "eslint-plugin-standard": "^5.0.0",
+    "husky": "^6.0.0",
+    "prettier": "^2.3.0",
+    "pretty-quick": "^3.1.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged",
+      "pre-push": "pretty-quick --staged"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bubao/keyboard-builder-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bubao/keyboard-builder-server/issues"
+  },
+  "homepage": "https://github.com/bubao/keyboard-builder-server#readme"
 }
